@@ -1,2 +1,2 @@
 # bc-news
-PWA | Progressive Web App of news by Bruno corona
+PWA - Progressive web app of news by Bruno Corona
