@@ -1,4 +1,4 @@
-var cacheName = 'bc-news-0.0.1';
+var cacheName = 'bc-news-1.0.0';
 var dataCacheName = 'news-data-v1';
 
 var urlsToCache = [
