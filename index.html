@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="imgs/logo.png" type="image/png" /> 
     <title>BC News</title>
+    <link rel="manifest" href="manifest.json">
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-    Welcome to BC News
+
+    <div class="background"></div>
+
+    <header>
+      <img src="imgs/logo.png" alt="">
+      <img src="imgs/reload.svg" id="reload-news-btn" class="reload-btn">
+    </header>
+
+    <section class="news-container">
+
+      <article class="bc-new" hidden>
+        <img class="bc-new-img" src="" alt="">
+        <div class="bc-new-text">
+          <h2 class="bc-news-title"></h2>
+          <p class="bc-news-body"></p>
+        </div>
+      </article>
+
+    </section>
+
+    <div style="text-align: center;">
+      <img src="imgs/loader.svg" alt="">
+    </div>
+
+    <div class="powered-by">
+      <small>Powered by <a href="https://newsapi.org/">News API</a> </small>
+    </div>
+    <!-- app -->
+    <script src="scripts/app.js" async></script>
   </body>
 </html>
