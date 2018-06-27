@@ -30,6 +30,20 @@
 
         var url = 'https://newsapi.org/v2/top-headlines?category=technology&country=us&apiKey=' + app.newsapi_key;
 
+        if ('caches' in window) {
+            /*
+             * Check if the service worker has already cached news data.
+             * If the service worker has the data, then display the cached data while the app fetches the latest data.
+             */
+            caches.match(url).then(function(response) {
+                if (response) {
+                    response.json().then(function updateFromCache(json) {
+                        app.news = json.articles;
+                        app.displayNews();
+                    });
+                }
+            });
+        }
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -52,5 +66,12 @@
     // start app
     app.init();
 
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker Registered', registration.scope);
+            });
+    }
 
 })();
