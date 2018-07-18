@@ -41,8 +41,8 @@ self.addEventListener('fetch', function(e) {
   var dataUrl = 'https://newsapi.org/v2/top-headlines';
   if (e.request.url.indexOf(dataUrl) > -1) {
     /*
-     * When the request URL contains dataUrl, the app is asking for fresh
-     * weather data. In this case, the service worker always goes to the
+     * When the request URL contains dataUrl, the app is asking for fresh data.
+     * In this case, the service worker always goes to the
      * network and then caches the response. This is called the "Cache then
      * network" strategy:
      * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
